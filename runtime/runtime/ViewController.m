@@ -49,7 +49,7 @@
          }
      }
 }
-//使用runtime来动态添加方法
+//3.使用runtime来动态添加方法
 - (void) addMethod{
     //"v@:@ v标识void @标识id类型  ：表示 SEL方法"
     class_addMethod([self.persion class], @selector(run:), (IMP)runMethod, "v@:@");
@@ -60,7 +60,7 @@
 void runMethod(id self,SEL _cmd, NSString *miles){
     NSLog(@"%@",miles);
 }
-// 使用runtime交换两个方法
+// 2.使用runtime交换两个方法
 -(void)exchangedMethod{
     //获取方法
     Method m1 = class_getInstanceMethod([self.persion class], @selector(fristMethod));
